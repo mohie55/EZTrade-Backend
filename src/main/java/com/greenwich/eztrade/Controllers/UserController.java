@@ -5,13 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.HashMap;
 
 
-
+@RestController
 public class UserController {
 
     @Autowired
@@ -23,9 +24,10 @@ public class UserController {
         return userService.checkUserCredentials(email, password);
     }
 
-    @PostMapping("/register")
+        @PostMapping("/register")
     public HashMap<String, Object> registerUser(@RequestParam String firstName, @RequestParam String lastName,@RequestParam String email, @RequestParam String password){
 
         return userService.registerUser(firstName,lastName,email,password);
     }
+
 }

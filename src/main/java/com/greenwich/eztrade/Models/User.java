@@ -13,7 +13,7 @@ public class User {
     @Column("id_users")
     private int id;
 
-    @Column("irst_name")
+    @Column("first_name")
     private String firstName;
 
     @Column("last_name")
@@ -21,6 +21,7 @@ public class User {
 
     private String email;
 
+    @Column("pass")
     private String password;
 
     private int reviews;
