@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 public class User {
 
     @Id
-    @Column("id_users")
     private int id;
 
     @Column("first_name")
@@ -20,7 +19,6 @@ public class User {
     private String lastName;
 
     private String email;
-
 
     private String password;
 
