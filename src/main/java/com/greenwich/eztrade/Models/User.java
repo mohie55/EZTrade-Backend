@@ -21,7 +21,7 @@ public class User {
 
     private String email;
 
-    @Column("pass")
+
     private String password;
 
     private int reviews;
