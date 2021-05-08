@@ -19,10 +19,10 @@ public class UserService {
         User user = userRepository.checkUserCredentials(email, password);
 
         if (user != null) {
-             loginResponse.put("response","success");
+             loginResponse.put("message","success");
              loginResponse.put("user",user);
         } else {
-            loginResponse.put("response","failed");
+            loginResponse.put("message","failed");
             loginResponse.put("user",user);
         }
 

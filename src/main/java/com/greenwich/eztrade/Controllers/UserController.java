@@ -16,7 +16,7 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/login")
-    public HashMap<String, Object> login(@RequestParam String email, @RequestParam String password){
+    public HashMap<String, Object> login(@RequestParam String email, @RequestParam String password) {
 
         return userService.checkUserCredentials(email, password);
     }
