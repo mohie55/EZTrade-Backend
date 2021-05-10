@@ -1,5 +1,7 @@
 package com.greenwich.eztrade.Services;
 
+import com.greenwich.eztrade.DTOs.SellerDetailsDTO;
+import com.greenwich.eztrade.Models.Item;
 import com.greenwich.eztrade.Models.User;
 import com.greenwich.eztrade.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +43,22 @@ public class UserService {
             registerUserResponse.put("message","failed");
         }
         return registerUserResponse;
+    }
+
+    public HashMap<String, Object> getSellerDetails(int userId) {
+
+
+        HashMap<String, Object> sellerDetailsResponse = new HashMap<>();
+
+        try {
+            SellerDetailsDTO sellerDetailsDTO =  userRepository.getSellerDetails(userId);
+
+            sellerDetailsResponse.put("message", "success");
+            sellerDetailsResponse.put("item", sellerDetailsDTO);
+        } catch (Exception e){
+            e.printStackTrace();
+            sellerDetailsResponse.put("message", "failed");
+        }
+        return  sellerDetailsResponse;
     }
 }

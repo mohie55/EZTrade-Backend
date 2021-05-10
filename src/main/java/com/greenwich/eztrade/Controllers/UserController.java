@@ -27,9 +27,12 @@ public class UserController {
         return userService.registerUser(firstName,lastName,email,password);
     }
 
-    @GetMapping("/hello")
-    public String registerUser(){
-        return "hello there";
+    @GetMapping("/getSellerDetails")
+    public HashMap<String, Object> getItemLocations(int userId) {
+
+        return userService.getSellerDetails(userId);
     }
+
+
 
 }
