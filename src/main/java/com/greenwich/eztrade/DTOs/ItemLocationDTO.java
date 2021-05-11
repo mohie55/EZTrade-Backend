@@ -16,6 +16,13 @@ public class ItemLocationDTO {
         this.title = title;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Double getPrice() {
         return price;
@@ -33,13 +40,7 @@ public class ItemLocationDTO {
         this.title = title;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public Double getLatitude() {
         return latitude;

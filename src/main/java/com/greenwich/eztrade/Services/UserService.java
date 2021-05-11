@@ -54,7 +54,7 @@ public class UserService {
             SellerDetailsDTO sellerDetailsDTO =  userRepository.getSellerDetails(userId);
 
             sellerDetailsResponse.put("message", "success");
-            sellerDetailsResponse.put("item", sellerDetailsDTO);
+            sellerDetailsResponse.put("sellerDetails", sellerDetailsDTO);
         } catch (Exception e){
             e.printStackTrace();
             sellerDetailsResponse.put("message", "failed");

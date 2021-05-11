@@ -112,11 +112,29 @@ public class ItemService {
             List<String> imageUrls =  itemRepository.getImageUrls(itemId);
 
             imageUrlsResponse.put("message", "success");
-            imageUrlsResponse.put("item", imageUrls);
+            imageUrlsResponse.put("imageUrls", imageUrls);
         } catch (Exception e){
             e.printStackTrace();
             imageUrlsResponse.put("message", "failed");
         }
         return  imageUrlsResponse;
     }
+
+//    public HashMap<String, Object> getItemLocations(String search) {
+//
+//        HashMap<String, Object> itemLocationDTOSResponse = new HashMap<>();
+//
+//        try {
+//            List<String> itemLocationDTOS =  itemRepository.getItemLocations(search);
+//
+//            itemLocationDTOSResponse.put("message", "success");
+//            itemLocationDTOSResponse.put("itemLocationDTOS", itemLocationDTOS);
+//        } catch (Exception e){
+//            e.printStackTrace();
+//            itemLocationDTOSResponse.put("message", "failed");
+//        }
+//        return  itemLocationDTOSResponse;
+//    }
+
+
 }

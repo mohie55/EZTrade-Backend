@@ -28,7 +28,7 @@ public class ItemController {
     }
 
     @GetMapping("/getAllItemLocations")
-    public HashMap<String, Object> getItemLocations() {
+    public HashMap<String, Object> getAllItemLocations() {
 
         return itemService.getAllItemLocations();
     }
@@ -44,6 +44,15 @@ public class ItemController {
 
         return itemService.getImageUrls(itemId);
     }
+
+    @GetMapping("/getItem")
+    public HashMap<String, Object> getItem(int itemId) {
+
+        return itemService.getItem(itemId);
+    }
+
+
+
 
 
 

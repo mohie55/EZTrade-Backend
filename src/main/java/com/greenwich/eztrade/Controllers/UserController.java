@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @GetMapping("/getSellerDetails")
-    public HashMap<String, Object> getItemLocations(int userId) {
+    public HashMap<String, Object> getSellerDetails(int userId) {
 
         return userService.getSellerDetails(userId);
     }

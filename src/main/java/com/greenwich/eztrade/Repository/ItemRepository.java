@@ -14,7 +14,7 @@ public interface ItemRepository extends CrudRepository<Item, Integer> {
     @Query("select id,latitude,longitude,title,price from item")
     List<ItemLocationDTO> getAllItemLocations();
 
-    @Query("select id,latitude,longitude from item where title like '%' + :searchQuery + '%'")
+    @Query("select id,latitude,longitude,title,price from item where title like '%' + :searchQuery + '%'")
     List<ItemLocationDTO> getItemLocations(String searchQuery);
 
     @Query("select * from item where id = :itemId")
@@ -24,4 +24,6 @@ public interface ItemRepository extends CrudRepository<Item, Integer> {
     List<String> getImageUrls(int itemId);
 
 
+//    @Query("select title from item where title like '%' + :search + '%'")
+//    List<String> getItemLocations(String search);
 }
