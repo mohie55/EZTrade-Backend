@@ -51,7 +51,11 @@ public class ItemController {
         return itemService.getItem(itemId);
     }
 
+    @PostMapping("/setItemSold")
+    public HashMap<String, Object> saveItemImage(int itemId) {
 
+        return itemService.setItemSold(itemId);
+    }
 
 
 

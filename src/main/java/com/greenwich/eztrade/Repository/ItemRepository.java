@@ -11,10 +11,10 @@ import java.util.List;
 @Repository
 public interface ItemRepository extends CrudRepository<Item, Integer> {
 
-    @Query("select id,latitude,longitude,title,price from item")
+    @Query("select id,latitude,longitude,title,price from item where is_sold = 0;")
     List<ItemLocationDTO> getAllItemLocations();
 
-    @Query("select id,latitude,longitude,title,price from item where title like '%' + :searchQuery + '%'")
+    @Query("select id,latitude,longitude,title,price from item where title like '%' + :searchQuery + '%' AND is_sold = 0")
     List<ItemLocationDTO> getItemLocations(String searchQuery);
 
     @Query("select * from item where id = :itemId")
@@ -23,7 +23,8 @@ public interface ItemRepository extends CrudRepository<Item, Integer> {
     @Query("select download_url from item_image where item_id = :itemId")
     List<String> getImageUrls(int itemId);
 
+    @Query("UPDATE item set is_sold = 1 where id = :itemId; select is_sold from item where id = :itemId ;")
+    int setItemSold(int itemId);
 
-//    @Query("select title from item where title like '%' + :search + '%'")
-//    List<String> getItemLocations(String search);
+
 }

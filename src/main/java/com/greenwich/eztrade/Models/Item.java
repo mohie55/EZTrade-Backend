@@ -32,8 +32,12 @@ public class Item {
     @Column("user_id")
     private Integer userId;
 
+    @Column("is_sold")
+    private Boolean isSold;
 
-    public Item(String title, String description, String category, Double price, Double latitude, Double longitude, Integer userId) {
+
+    public Item(int id, String title, String description, String category, Double price, Double latitude, Double longitude, Integer userId, Boolean isSold) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.category = category;
@@ -41,6 +45,7 @@ public class Item {
         this.latitude = latitude;
         this.longitude = longitude;
         this.userId = userId;
+        this.isSold = isSold;
     }
 
     public int getId() {
@@ -105,5 +110,13 @@ public class Item {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Boolean getIsSold() {
+        return isSold;
+    }
+
+    public void setIsSold(Boolean isSold) {
+        this.isSold = isSold;
     }
 }

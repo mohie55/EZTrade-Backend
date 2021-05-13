@@ -120,6 +120,23 @@ public class ItemService {
         return  imageUrlsResponse;
     }
 
+    public HashMap<String, Object> setItemSold(int itemId) {
+
+        HashMap<String, Object> itemSoldResponse = new HashMap<>();
+
+        try {
+            int isSold = itemRepository.setItemSold(itemId);
+
+            itemSoldResponse.put("message", "success");
+            itemSoldResponse.put("isSold", isSold);
+        } catch (Exception e){
+            e.printStackTrace();
+            itemSoldResponse.put("message", "failed");
+        }
+        return  itemSoldResponse;
+
+    }
+
 //    public HashMap<String, Object> getItemLocations(String search) {
 //
 //        HashMap<String, Object> itemLocationDTOSResponse = new HashMap<>();
